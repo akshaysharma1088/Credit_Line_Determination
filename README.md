@@ -359,8 +359,5 @@ If you use this code or synthetic data generator in your research, please cite:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 > **Data Privacy Notice:** This repository contains only synthetic data and code. No real customer records, account numbers, or personally identifiable information are included or referenced.
