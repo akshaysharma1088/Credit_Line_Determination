@@ -1,0 +1,52 @@
+{
+  "groups_single_threshold": {
+    "A0": {
+      "auc": 0.749,
+      "ece": 0.008,
+      "approval": 0.5452,
+      "approved_default_rate": 0.0834,
+      "base_default_rate": 0.172
+    },
+    "A1": {
+      "auc": 0.775,
+      "ece": 0.005,
+      "approval": 0.4612,
+      "approved_default_rate": 0.0896,
+      "base_default_rate": 0.211
+    }
+  },
+  "before": {
+    "approval_A0": 0.5452005810705107,
+    "approval_A1": 0.4612155809267965,
+    "dp_diff": 0.08398500014371424,
+    "tpr_gap": 0.07126786961018206,
+    "fpr_gap": 0.06875338261680009,
+    "di_ratio": 0.8459557765349255
+  },
+  "after": {
+    "approval_A0": 0.5046373896524752,
+    "approval_A1": 0.5181329751511081,
+    "dp_diff": 0.013495585498632945,
+    "tpr_gap": 0.03699572568200826,
+    "fpr_gap": 0.01527663408499147,
+    "di_ratio": 1.026743134328447
+  },
+  "group_raw_score_thresholds": {
+    "A0": 0.3001,
+    "A1": 0.3449
+  },
+  "economics_single": {
+    "approval_rate": 0.511640389131164,
+    "approved_default_rate": 0.08562811434565959,
+    "revenue": 627570.0,
+    "loss": 261200.0,
+    "net_profit": 366370.0
+  },
+  "economics_recalibrated": {
+    "approval_rate": 0.510030191211003,
+    "approved_default_rate": 0.08589844777690081,
+    "revenue": 625410.0,
+    "loss": 261200.0,
+    "net_profit": 364210.0
+  }
+}

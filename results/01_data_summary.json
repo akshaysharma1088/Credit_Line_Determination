@@ -1,0 +1,12 @@
+{
+  "n_accounts": 60000,
+  "default_rate": 0.1811,
+  "default_rate_A0": 0.1652,
+  "default_rate_A1": 0.2052,
+  "share_A1": 0.3986,
+  "n_by_split": {
+    "train_years_1_2": 30121,
+    "validation_year_3": 14974,
+    "test_year_4": 14905
+  }
+}

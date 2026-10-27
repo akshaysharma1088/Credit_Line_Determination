@@ -1,0 +1,21 @@
+{
+  "util_slope_6m": 0.4178,
+  "util_3m": 0.2932,
+  "pmt_to_bal_6m": 0.1637,
+  "score_delta_6m": 0.1508,
+  "consec_ontime": 0.1499,
+  "spend_entropy": 0.0905,
+  "util_vol_6m": 0.0902,
+  "pmt_timing_dev": 0.0844,
+  "inquiries_6m": 0.0822,
+  "spend_cv": 0.0806,
+  "bureau_score": 0.075,
+  "full_to_min_ratio": 0.0721,
+  "ext_util": 0.0682,
+  "util_6m_mean": 0.0669,
+  "revolver_consistency": 0.0598,
+  "tenure_months": 0.0576,
+  "score_delta_3m": 0.0571,
+  "credit_limit": 0.057,
+  "delinq_spike": 0.0426
+}

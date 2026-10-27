@@ -1,0 +1,24 @@
+{
+  "break_even_pd": 0.22499999999999998,
+  "tau_star": 0.0996,
+  "approval_rate": 0.5116,
+  "logistic": {
+    "approval_rate": 0.511640389131164,
+    "approved_default_rate": 0.08457907159716758,
+    "revenue": 628290.0,
+    "loss": 258000.0,
+    "net_profit": 370290.0
+  },
+  "gradient_boosting": {
+    "approval_rate": 0.511640389131164,
+    "approved_default_rate": 0.08562811434565959,
+    "revenue": 627570.0,
+    "loss": 261200.0,
+    "net_profit": 366370.0
+  },
+  "change": {
+    "approved_default_rate_pp": 0.1,
+    "loss_pct": 1.2,
+    "net_profit_pct": -1.1
+  }
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "approval_A1": 0.4612,
+    "dp_diff": 0.084,
+    "signed_gap": 0.084,
+    "net_profit": 366370.0
+  },
+  {
+    "approval_A1": 0.4647,
+    "dp_diff": 0.0805,
+    "signed_gap": 0.0805,
+    "net_profit": 367770.0
+  },
+  {
+    "approval_A1": 0.4683,
+    "dp_diff": 0.0769,
+    "signed_gap": 0.0769,
+    "net_profit": 368190.0
+  },
+  {
+    "approval_A1": 0.4718,
+    "dp_diff": 0.0734,
+    "signed_gap": 0.0734,
+    "net_profit": 368120.0
+  },
+  {
+    "approval_A1": 0.4752,
+    "dp_diff": 0.07,
+    "signed_gap": 0.07,
+    "net_profit": 368940.0
+  },
+  {
+    "approval_A1": 0.4787,
+    "dp_diff": 0.0665,
+    "signed_gap": 0.0665,
+    "net_profit": 370340.0
+  },
+  {
+    "approval_A1": 0.4822,
+    "dp_diff": 0.063,
+    "signed_gap": 0.063,
+    "net_profit": 371740.0
+  },
+  {
+    "approval_A1": 0.4857,
+    "dp_diff": 0.0595,
+    "signed_gap": 0.0595,
+    "net_profit": 372650.0
+  },
+  {
+    "approval_A1": 0.4893,
+    "dp_diff": 0.0559,
+    "signed_gap": 0.0559,
+    "net_profit": 374050.0
+  },
+  {
+    "approval_A1": 0.4928,
+    "dp_diff": 0.0524,
+    "signed_gap": 0.0524,
+    "net_profit": 373980.0
+  },
+  {
+    "approval_A1": 0.4961,
+    "dp_diff": 0.0491,
+    "signed_gap": 0.0491,
+    "net_profit": 374310.0
+  },
+  {
+    "approval_A1": 0.4997,
+    "dp_diff": 0.0455,
+    "signed_gap": 0.0455,
+    "net_profit": 375220.0
+  },
+  {
+    "approval_A1": 0.5032,
+    "dp_diff": 0.042,
+    "signed_gap": 0.042,
+    "net_profit": 375640.0
+  },
+  {
+    "approval_A1": 0.5067,
+    "dp_diff": 0.0385,
+    "signed_gap": 0.0385,
+    "net_profit": 376550.0
+  },
+  {
+    "approval_A1": 0.5102,
+    "dp_diff": 0.035,
+    "signed_gap": 0.035,
+    "net_profit": 376480.0
+  },
+  {
+    "approval_A1": 0.5138,
+    "dp_diff": 0.0314,
+    "signed_gap": 0.0314,
+    "net_profit": 377880.0
+  },
+  {
+    "approval_A1": 0.5171,
+    "dp_diff": 0.0281,
+    "signed_gap": 0.0281,
+    "net_profit": 378700.0
+  },
+  {
+    "approval_A1": 0.5207,
+    "dp_diff": 0.0245,
+    "signed_gap": 0.0245,
+    "net_profit": 380100.0
+  },
+  {
+    "approval_A1": 0.5242,
+    "dp_diff": 0.021,
+    "signed_gap": 0.021,
+    "net_profit": 380030.0
+  },
+  {
+    "approval_A1": 0.5277,
+    "dp_diff": 0.0175,
+    "signed_gap": 0.0175,
+    "net_profit": 381430.0
+  },
+  {
+    "approval_A1": 0.5312,
+    "dp_diff": 0.014,
+    "signed_gap": 0.014,
+    "net_profit": 381850.0
+  },
+  {
+    "approval_A1": 0.5348,
+    "dp_diff": 0.0104,
+    "signed_gap": 0.0104,
+    "net_profit": 383740.0
+  },
+  {
+    "approval_A1": 0.5381,
+    "dp_diff": 0.0071,
+    "signed_gap": 0.0071,
+    "net_profit": 383580.0
+  },
+  {
+    "approval_A1": 0.5416,
+    "dp_diff": 0.0036,
+    "signed_gap": 0.0036,
+    "net_profit": 383020.0
+  },
+  {
+    "approval_A1": 0.5452,
+    "dp_diff": 0.0,
+    "signed_gap": 0.0,
+    "net_profit": 384420.0
+  }
+]

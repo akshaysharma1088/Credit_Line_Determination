@@ -1,0 +1,9 @@
+{
+  "base_auc": 0.7625,
+  "auc_drop": {
+    "utilization": 0.0419,
+    "payment": 0.0106,
+    "behavioral": -0.0019,
+    "risk_drift": 0.0111
+  }
+}
