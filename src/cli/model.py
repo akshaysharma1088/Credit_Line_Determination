@@ -26,10 +26,12 @@ def split(df):
 
 
 def fit_xgb(Xtr, ytr, Xva, yva, seed=SEED):
+    # Early stopping monitors validation AUC. Monitoring unweighted log-loss while training with
+    # scale_pos_weight (as in the first release) never triggers a stop and leaves the model over-trained.
     spw = (ytr == 0).sum() / (ytr == 1).sum()
     m = xgb.XGBClassifier(max_depth=5, learning_rate=0.05, n_estimators=600, subsample=0.8,
                           colsample_bytree=0.8, reg_lambda=1.0, scale_pos_weight=spw,
-                          early_stopping_rounds=50, eval_metric="logloss", random_state=seed,
+                          early_stopping_rounds=50, eval_metric="auc", random_state=seed,
                           n_jobs=2, tree_method="hist")
     m.fit(Xtr, ytr, eval_set=[(Xva, yva)], verbose=False)
     return m
@@ -204,7 +206,7 @@ def main():
     fig, ax = plt.subplots(figsize=(4, 3.2))
     ax.plot([p["signed_gap"] for p in pts], [p["net_profit"] / 1e6 for p in pts], "o-", ms=3, color="#2F6DB5")
     ax.invert_xaxis(); ax.set_xlabel("Demographic-parity gap (approval A0 minus A1)"); ax.set_ylabel("Realized net profit (millions)")
-    ax.set_title("Fairness-economics frontier"); fig.tight_layout(); fig.savefig(FIGS / "fig6_frontier.png", dpi=300); plt.close(fig)
+    ax.set_title("Access expansion path (larger risk budget)"); fig.tight_layout(); fig.savefig(FIGS / "fig6_expansion_path.png", dpi=300); plt.close(fig)
     print("done")
 
 
