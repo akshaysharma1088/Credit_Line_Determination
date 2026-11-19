@@ -20,18 +20,26 @@ def _sigmoid(x):
     return 1.0 / (1.0 + np.exp(-x))
 
 
-def generate(n=60_000, seed=SEED):
+def generate(n=60_000, seed=SEED, w_unobs=0.90, nl_scale=1.0, group_shift=0.35, proxy_scale=1.0,
+             keep_truth=False):
+    """Defaults reproduce the paper's portfolio exactly. The keyword arguments are the
+    generator assumptions varied in the sensitivity analysis (cli.robustness):
+    w_unobs      weight of the unobserved factor in the risk index (caps discrimination)
+    nl_scale     multiplier on the threshold and interaction terms (nonlinear structure)
+    group_shift  mean stress shift of the disadvantaged group (true risk difference)
+    proxy_scale  multiplier on the direct dependence of limit and score on A (proxy bias)
+    """
     rng = np.random.default_rng(seed)
     year = rng.choice([1, 2, 3, 4], size=n)
     A = (rng.random(n) < 0.40).astype(int)                 # 1 = disadvantaged group
-    stress = rng.normal(0.35 * A + 0.04 * (year - 1), 1.0, n)
+    stress = rng.normal(group_shift * A + 0.04 * (year - 1), 1.0, n)
     unobs = rng.normal(0, 1, n)                           # never observed by any model
     noise = lambda s: rng.normal(0, s, n)
 
     # account master
     tenure = np.clip(rng.gamma(3.0, 18.0, n) - 4 * stress, 3, 360).round()
-    bureau = np.clip(705 - 38 * stress - 14 * A + noise(30), 450, 850).round()
-    limit = np.clip(np.exp(8.6 - 0.18 * stress - 0.20 * A + noise(0.45)), 500, 50_000).round(-1)
+    bureau = np.clip(705 - 38 * stress - (14 * proxy_scale) * A + noise(30), 450, 850).round()
+    limit = np.clip(np.exp(8.6 - 0.18 * stress - (0.20 * proxy_scale) * A + noise(0.45)), 500, 50_000).round(-1)
     ext_util = np.clip(0.30 + 0.10 * stress + noise(0.12), 0, 1.2)
 
     # utilization dynamics
@@ -58,13 +66,13 @@ def generate(n=60_000, seed=SEED):
     delinq_spike = (rng.random(n) < _sigmoid(-3.2 + 0.9 * stress)).astype(int)
 
     # nonlinear risk index: threshold and interaction terms on observed behavior
-    risk = (0.25 * stress + 0.90 * unobs
-            + 1.6 * ((util_3m > 0.70) & (pmt_to_bal < 0.45))
-            + 1.2 * (util_slope > 0.05)
-            + 1.0 * (consec_ontime < 6)
-            + 1.0 * delinq_spike * (util_3m > 0.6)
-            + 0.7 * (score_d6 < -20)
-            + 0.5 * (inquiries >= 3))
+    risk = (0.25 * stress + w_unobs * unobs
+            + (1.6 * nl_scale) * ((util_3m > 0.70) & (pmt_to_bal < 0.45))
+            + (1.2 * nl_scale) * (util_slope > 0.05)
+            + (1.0 * nl_scale) * (consec_ontime < 6)
+            + (1.0 * nl_scale) * delinq_spike * (util_3m > 0.6)
+            + (0.7 * nl_scale) * (score_d6 < -20)
+            + (0.5 * nl_scale) * (inquiries >= 3))
     lo, hi = -10.0, 10.0  # intercept by bisection to hit the target base rate
     for _ in range(60):
         mid = (lo + hi) / 2
@@ -86,6 +94,8 @@ def generate(n=60_000, seed=SEED):
         "delinq_spike": delinq_spike,
         "default": default,
     })
+    if keep_truth:
+        df["pd_true"] = pd_true
     return df
 
 
